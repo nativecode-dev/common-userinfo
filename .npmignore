@@ -1,0 +1,14 @@
+.vscode/
+src/
+tests/
+
+*.tgz
+.editorconfig
+.jsbeautifyrc
+.npmignore
+.npmrc
+.nvmrc
+.travis.yml
+gulpfile.js
+gulpfile.json
+npm-debug.log
