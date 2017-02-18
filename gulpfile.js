@@ -14,6 +14,7 @@ gulp.task('build:js', () => {
 
 gulp.task('clean', () => {
   return gulp.src($.sources.clean)
+    .pipe(plugins.debug($.debug.js))
     .pipe(plugins.clean())
 })
 

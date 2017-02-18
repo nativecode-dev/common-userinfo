@@ -2,6 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/common-userinfo.svg?style=flat-square)](https://www.npmjs.com/package/common-userinfo)
 [![Travis](https://img.shields.io/travis/nativecode-dev/common-userinfo.svg?style=flat-square&label=travis)](https://travis-ci.org/nativecode-dev/common-userinfo)
+[![TeamCity](https://img.shields.io/teamcity/https/build.nativecode.com/s/commonuserinfo_continuous.svg?style=flat-square&label=teamcity)](https://build.nativecode.com/viewType.html?buildTypeId=commonuserinfo_continuous&guest=1)
 [![David](https://img.shields.io/david/nativecode-dev/common-userinfo.svg?style=flat-square&label=deps)](https://www.npmjs.com/package/common-userinfo)
 [![David](https://img.shields.io/david/dev/nativecode-dev/common-userinfo.svg?style=flat-square&label=devdeps)](https://www.npmjs.com/package/common-userinfo)
 
