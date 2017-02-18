@@ -1,5 +1,28 @@
 # common-userinfo
 
+[![npm](https://img.shields.io/npm/v/common-userinfo.svg?style=flat-square)](https://www.npmjs.com/package/common-userinfo)
+[![Travis](https://img.shields.io/travis/nativecode-dev/common-userinfo.svg?style=flat-square&label=travis)](https://travis-ci.org/nativecode-dev/common-userinfo)
+[![David](https://img.shields.io/david/nativecode-dev/common-userinfo.svg?style=flat-square&label=deps)](https://www.npmjs.com/package/common-userinfo)
+[![David](https://img.shields.io/david/dev/nativecode-dev/common-userinfo.svg?style=flat-square&label=devdeps)](https://www.npmjs.com/package/common-userinfo)
+
+Cross platform `userInfo` properties for `node` v4 and v5 for POSIX and Windows.
+
+NOTE: Performance for v4 and v5 uses several `exec` calls to get info.
+
+# Installation
+```
+npm install --save common-userinfo
+```
+
+# Usage
+```javascript
+const userinfo = require('common-userinfo')
+
+```
+
+# TODO
+- Improve performance for `node` v4 and v5.
+
 # License
 Copyright 2017 NativeCode Development <support@nativecode.com>
 

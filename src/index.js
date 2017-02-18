@@ -1,30 +1,33 @@
 const os = require('os')
 
-switch (os.platform()) {
-  case 'win32':
-    const process = require('process')
-    module.exports = {
-      gid: -1,
-      homedir: process.env.HOME,
-      uid: -1,
-      username: process.env.USERNAME
-    }
-    break;
+if (os.userInfo) {
 
-  default:
-    if (os.userInfo) {
-      module.exports = os.userInfo()
-    } else {
-      const exec = require('child_process').execSync
-      const username = exec('whoami').toString().trim()
-      module.exports = {
-        gid: exec('eval echo `id -g $USER`').toString().trim(),
-        homedir: exec('eval echo ~$USER').toString().trim(),
-        uid: exec('eval echo `id -u $USER`').toString().trim(),
-        username: username
-      }
-    }
-    break;
+  // Bail if we already can access userInfo function.
+  module.exports = os.userInfo()
+
+} else if (os.platform() === 'win32') {
+
+  // If we're on Windows, we'll grab the necessary info from environment variables.
+  const process = require('process')
+  module.exports = {
+    uid: -1,
+    gid: -1,
+    username: process.env.USERNAME,
+    homedir: process.env.HOME,
+    shell: null
+  }
+
+} else {
+
+  // If we're on POSIX systems, we'll shell out and use native calls.
+  const exec = require('child_process').execSync
+  const username = exec('whoami').toString().trim()
+  module.exports = {
+    uid: parseInt(exec('eval echo `id -u $USER`').toString().trim()),
+    gid: parseInt(exec('eval echo `id -g $USER`').toString().trim()),
+    username: username,
+    homedir: exec('eval echo ~$USER').toString().trim(),
+    shell: exec('eval echo $SHELL').toString().trim()
+  }
+
 }
-
-console.log(module.exports)
