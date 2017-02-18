@@ -16,11 +16,11 @@ switch (os.platform()) {
       module.exports = os.userInfo()
     } else {
       const exec = require('child_process').execSync
-      const username = exec('whoami')
+      const username = exec('whoami').toString()
       module.exports = {
-        gid: exec('eval echo `id -g $USER`'),
-        homedir: exec('eval echo ~$USER'),
-        uid: exec('eval echo `id -u $USER`'),
+        gid: exec('eval echo `id -g $USER`').toString(),
+        homedir: exec('eval echo ~$USER').toString(),
+        uid: exec('eval echo `id -u $USER`').toString(),
         username: username
       }
     }
