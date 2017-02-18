@@ -6,4 +6,3 @@ node_js:
   - "4"
 os:
   - linux
-  - osx
