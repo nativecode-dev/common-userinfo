@@ -2,7 +2,10 @@
   "author": "NativeCode Development <support@nativecode.com> (https://www.nativecode.com)",
   "description": "Library to retrieve common cross-platform userinfo.",
   "homepage": "https://github.com/nativecode-dev/common-userinfo",
-  "keywords": ["cross-platform", "userinfo"],
+  "keywords": [
+    "cross-platform",
+    "userinfo"
+  ],
   "license": "MIT",
   "main": "lib/index.js",
   "name": "common-userinfo",
@@ -17,8 +20,8 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
-    "gulp-configly": "^1.1.4",
-    "gulp-debug": "^3.0.0",
+    "gulp-configly": "^1.1.5",
+    "gulp-debug": "^3.1.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-mocha": "^3.0.1",
     "mocha": "^3.2.0"
