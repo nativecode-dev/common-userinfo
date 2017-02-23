@@ -5,6 +5,9 @@
     },
     "json": {
       "title": "json"
+    },
+    "sh": {
+      "title": "sh"
     }
   },
   "destination": {
@@ -32,6 +35,7 @@
     "clean": ["lib/", "*.tgz"],
     "js": ["src/**/*.js"],
     "json": ["src/**/*.json"],
+    "sh": ["src/**/*.sh"],
     "tests": ["tests/**/when_*.js"]
   }
 }

@@ -20,14 +20,18 @@ if (os.userInfo) {
 } else {
 
   // If we're on POSIX systems, we'll shell out and use native calls.
+  const path = require('path')
   const exec = require('child_process').execSync
-  const username = exec('whoami').toString().trim()
+
+  const script = path.join(__dirname, 'userinfo.sh')
+  const info = exec(`/bin/sh ${script}`).toString().split('\n')
+
   module.exports = {
-    uid: parseInt(exec('eval echo `id -u $USER`').toString().trim()),
-    gid: parseInt(exec('eval echo `id -g $USER`').toString().trim()),
-    username: username,
-    homedir: exec('eval echo ~$USER').toString().trim(),
-    shell: exec('eval echo $SHELL').toString().trim()
+    uid: info[1],
+    gid: info[2],
+    username: info[0],
+    homedir: info[3],
+    shell: info[4]
   }
 
 }

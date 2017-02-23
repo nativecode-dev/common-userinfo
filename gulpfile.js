@@ -3,12 +3,18 @@ const plugins = require('gulp-load-plugins')()
 
 const $ = plugins.configly(__dirname, 'package.json')
 
-gulp.task('build', ['build:js'])
+gulp.task('build', ['build:js', 'build:sh'])
 
 gulp.task('build:js', () => {
   return gulp.src($.sources.js)
     .pipe(plugins.debug($.debug.js))
     .pipe(plugins.babel($.plugins.babel))
+    .pipe(gulp.dest($.destination.lib))
+})
+
+gulp.task('build:sh', () => {
+  return gulp.src($.sources.sh)
+    .pipe(plugins.debug($.debug.sh))
     .pipe(gulp.dest($.destination.lib))
 })
 
